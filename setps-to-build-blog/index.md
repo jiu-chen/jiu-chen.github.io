@@ -26,7 +26,7 @@ refer: https://hugoloveit.com/zh-cn/theme-documentation-basics/#top
 ``` bash
 hugo new post/my-first-post.md
 ```
-在文章中随便写点什么吧
+在文章中随便写点什么
 ## 本地预览
 ``` bash
 hugo server -D 
