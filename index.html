@@ -102,6 +102,15 @@
         alt="https://dn-qiniu-avatar.qbox.me/avatar/"
         title="https://dn-qiniu-avatar.qbox.me/avatar/" /></div><h2 class="home-subtitle">超越外在 挑战时间</h2></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/filter_by/">sqlalchemy filter和filter_by区别</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-08-07">2021-08-07</time></span></div><div class="content">区别    方法 语法 &gt; &lt;（大于，小于）查询 AND, OR查询     filter 类名.用属性名，比较用= 支持 支持   filter_by 直接用属性名，比较用== 支持 支持    Examples 1 2 3 4  # filter db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;, UserInfo.name=&#39;chen&#39;).first()   1 2 3  # filter_by db.session.query(UserInfo.id).filter_by(id==&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(id=&#39;1001&#39;, name=&#39;chen&#39;).first()   </div><div class="post-footer">
+        <a href="/filter_by/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/goroutine_join/">go main函数等待所有goroutine结束</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-08-07">2021-08-07</time></span></div><div class="content">在go中，main函数不会主动阻塞等待协程函数执行结束，类似默认调用了 C 中的 detach() 函数
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  package main import ( &#34;fmt&#34; &#34;time&#34; ) func main() { for i := 0; i &lt; 10; i++ { go func(i int) { time.Sleep(1 * time.Second) fmt.Println(i) }(i) } fmt.</div><div class="post-footer">
+        <a href="/goroutine_join/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/dump/">mysqldump导出数据</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-06-10">2021-06-10</time></span></div><div class="content">mysqldump
  -h server address, localhost default -t table -d &ndash;no-data, 不导出数据, 仅导出表结构  只导出表结构，不导出数据 1  mysqldump -uroot -p123 -d test_database &gt; output.sql   只导出表数据，不导出结构 1  mysqldump -uroot -p123 -t test_database &gt; output.sql   导出整个数据库，表结构&amp;数据 1  mysqldump -uroot -p123 test_database &gt; output.sql   导出单个数据表结构（不包含数据） 1  mysqldump -uroot -p123 -d test_database test_tbl &gt; output.</div><div class="post-footer">
@@ -132,28 +141,6 @@
 1 2  $ ssh -V OpenSSH_7.9p1, LibreSSL 2.7.3   ping 通过ping命令目标虚拟机可以check网络是否联通
 1 2 3 4 5  $ ping 10.211.55.3 PING 10.211.55.3 (10.211.55.3): 56 data bytes 64 bytes from 10.211.55.3: icmp_seq=0 ttl=64 time=0.217 ms 64 bytes from 10.</div><div class="post-footer">
         <a href="/ssh-connection/">Read More</a></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/add-user-and-authorize/">linux下添加用户并授权</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-17">2021-05-17</time></span></div><div class="content">添加Linux用户并为添加的用户授予root权限
-System: Centos7
-添加用户rock 1  adduser rock   修改用户密码 1  passwd rock   授权 因为个人用户只拥有当前home目录下的所有权限, 无法查看或修改其他用户目录。使用sudo可以获取到root权限。然而，新建的用户无法使用sudo命令，需要先对用户进行授权。
-编辑 /etc/sudoers 文件
-1 2  chmod -v u+w /etc/sudoers vim /etc/sudoers   在
-root ALL=(ALL) ALL
-下面加入一行
-rock ALL=(ALL) ALL
-后 wq 保存文件
-如果你想要使用sudo的时候不需要密码，则加入
-rock ALL=(ALL) NOPASSWD:ALL
-收回sudoers的写权限</div><div class="post-footer">
-        <a href="/add-user-and-authorize/">Read More</a></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/go-post-request-body/">go http请求中body的封装方法</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-08">2021-05-08</time></span></div><div class="content">go语言不像python, 它是静态强类型语言, 在使用变量之前必须声明好类型。
-在使用go net/http 发送 http 请求的时候，常常遇到请求所带的body是一个value类型不唯一的情况。比如有一个这样的request json body:
-1 2 3 4 5 6 7 8 9 10  { &#34;id&#34;: 10, &#34;name&#34;: &#34;jc&#34;, &#34;groups&#34;: [&#34;g1&#34;, &#34;g2&#34;], &#34;info&#34;: { &#34;address&#34;: &#34;xxxx&#34;, &#34;hobby&#34;: [&#34;noodle&#34;,&#34;sandwich&#34;], &#34;age&#34;: 11 } }   在python中，没有类型要求，只需要一步一步写下去即可:
-1 2 3 4 5 6 7 8 9 10 11 12 13  import request # .</div><div class="post-footer">
-        <a href="/go-post-request-body/">Read More</a></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>

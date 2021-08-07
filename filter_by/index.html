@@ -5,34 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>mysqldump导出数据 - jiuchen&#39;s blog</title><meta name="Description" content="jiuchen&#39;s blog"><meta property="og:title" content="mysqldump导出数据" />
-<meta property="og:description" content="mysqldump
- -h server address, localhost default -t table -d &ndash;no-data, 不导出数据, 仅导出表结构  只导出表结构，不导出数据 1  mysqldump -uroot -p123 -d test_database &gt; output.sql   只导出表数据，不导出结构 1  mysqldump -uroot -p123 -t test_database &gt; output.sql   导出整个数据库，表结构&amp;数据 1  mysqldump -uroot -p123 test_database &gt; output.sql   导出单个数据表结构（不包含数据） 1  mysqldump -uroot -p123 -d test_database test_tbl &gt; output." />
+        <title>sqlalchemy filter和filter_by区别 - jiuchen&#39;s blog</title><meta name="Description" content="jiuchen&#39;s blog"><meta property="og:title" content="sqlalchemy filter和filter_by区别" />
+<meta property="og:description" content="区别    方法 语法 &gt; &lt;（大于，小于）查询 AND, OR查询     filter 类名.用属性名，比较用= 支持 支持   filter_by 直接用属性名，比较用== 支持 支持    Examples 1 2 3 4  # filter db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;, UserInfo.name=&#39;chen&#39;).first()   1 2 3  # filter_by db.session.query(UserInfo.id).filter_by(id==&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(id=&#39;1001&#39;, name=&#39;chen&#39;).first()   " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://jiu-chen.github.io/dump/" /><meta property="og:image" content="http://jiu-chen.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-06-10T17:54:58&#43;08:00" />
-<meta property="article:modified_time" content="2021-06-10T17:54:58&#43;08:00" />
+<meta property="og:url" content="http://jiu-chen.github.io/filter_by/" /><meta property="og:image" content="http://jiu-chen.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-07T10:59:00&#43;08:00" />
+<meta property="article:modified_time" content="2021-08-07T10:59:00&#43;08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://jiu-chen.github.io/logo.png"/>
 
-<meta name="twitter:title" content="mysqldump导出数据"/>
-<meta name="twitter:description" content="mysqldump
- -h server address, localhost default -t table -d &ndash;no-data, 不导出数据, 仅导出表结构  只导出表结构，不导出数据 1  mysqldump -uroot -p123 -d test_database &gt; output.sql   只导出表数据，不导出结构 1  mysqldump -uroot -p123 -t test_database &gt; output.sql   导出整个数据库，表结构&amp;数据 1  mysqldump -uroot -p123 test_database &gt; output.sql   导出单个数据表结构（不包含数据） 1  mysqldump -uroot -p123 -d test_database test_tbl &gt; output."/>
+<meta name="twitter:title" content="sqlalchemy filter和filter_by区别"/>
+<meta name="twitter:description" content="区别    方法 语法 &gt; &lt;（大于，小于）查询 AND, OR查询     filter 类名.用属性名，比较用= 支持 支持   filter_by 直接用属性名，比较用== 支持 支持    Examples 1 2 3 4  # filter db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;, UserInfo.name=&#39;chen&#39;).first()   1 2 3  # filter_by db.session.query(UserInfo.id).filter_by(id==&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(id=&#39;1001&#39;, name=&#39;chen&#39;).first()   "/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://jiu-chen.github.io/dump/" /><link rel="prev" href="http://jiu-chen.github.io/copy_file/" /><link rel="next" href="http://jiu-chen.github.io/goroutine_join/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://jiu-chen.github.io/filter_by/" /><link rel="prev" href="http://jiu-chen.github.io/goroutine_join/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "mysqldump导出数据",
+        "headline": "sqlalchemy filter和filter_by区别",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/jiu-chen.github.io\/dump\/"
-        },"genre": "posts","wordcount":  68 ,
-        "url": "http:\/\/jiu-chen.github.io\/dump\/","datePublished": "2021-06-10T17:54:58+08:00","dateModified": "2021-06-10T17:54:58+08:00","publisher": {
+            "@id": "http:\/\/jiu-chen.github.io\/filter_by\/"
+        },"genre": "posts","wordcount":  33 ,
+        "url": "http:\/\/jiu-chen.github.io\/filter_by\/","datePublished": "2021-08-07T10:59:00+08:00","dateModified": "2021-08-07T10:59:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -106,9 +104,9 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">mysqldump导出数据</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">sqlalchemy filter和filter_by区别</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-10">2021-06-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;68 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-07">2021-08-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;33 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
@@ -117,92 +115,76 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#只导出表结构不导出数据">只导出表结构，不导出数据</a></li>
-        <li><a href="#只导出表数据不导出结构">只导出表数据，不导出结构</a></li>
-        <li><a href="#导出整个数据库表结构数据">导出整个数据库，表结构&amp;数据</a></li>
-        <li><a href="#导出单个数据表结构不包含数据">导出单个数据表结构（不包含数据）</a></li>
-        <li><a href="#导出单个表数据不包含结构">导出单个表数据（不包含结构）</a></li>
-        <li><a href="#导出单个表-表结构表数据">导出单个表 (表结构&amp;表数据)</a></li>
-      </ul>
-    </li>
+    <li><a href="#区别">区别</a></li>
+    <li><a href="#examples">Examples</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>mysqldump</p>
-<ul>
-<li>-h server address, localhost default</li>
-<li>-t table</li>
-<li>-d &ndash;no-data, 不导出数据, 仅导出表结构</li>
-</ul>
-<h3 id="只导出表结构不导出数据">只导出表结构，不导出数据</h3>
+            </div><div class="content" id="content"><h2 id="区别">区别</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>语法</th>
+<th>&gt; &lt;（大于，小于）查询</th>
+<th>AND, OR查询</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filter</td>
+<td>类名.用属性名，比较用=</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>filter_by</td>
+<td>直接用属性名，比较用==</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p123</span> <span class="o">-</span><span class="n">d</span> <span class="n">test_database</span> <span class="o">&gt;</span> <span class="k">output</span><span class="p">.</span><span class="k">sql</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># filter</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">UserInfo</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">UserInfo</span><span class="o">.</span><span class="n">id</span><span class="o">=</span><span class="s1">&#39;1001&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">UserInfo</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">UserInfo</span><span class="o">.</span><span class="n">id</span><span class="o">=</span><span class="s1">&#39;1001&#39;</span><span class="p">,</span> <span class="n">UserInfo</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;chen&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="只导出表数据不导出结构">只导出表数据，不导出结构</h3>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p123</span> <span class="o">-</span><span class="n">t</span> <span class="n">test_database</span> <span class="o">&gt;</span> <span class="k">output</span><span class="p">.</span><span class="k">sql</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="导出整个数据库表结构数据">导出整个数据库，表结构&amp;数据</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p123</span> <span class="n">test_database</span> <span class="o">&gt;</span> <span class="k">output</span><span class="p">.</span><span class="k">sql</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="导出单个数据表结构不包含数据">导出单个数据表结构（不包含数据）</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p123</span> <span class="o">-</span><span class="n">d</span> <span class="n">test_database</span> <span class="n">test_tbl</span> <span class="o">&gt;</span> <span class="k">output</span><span class="p">.</span><span class="k">sql</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="导出单个表数据不包含结构">导出单个表数据（不包含结构）</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p123</span> <span class="o">-</span><span class="n">t</span> <span class="n">test_database</span> <span class="n">test_tbl</span> <span class="o">&gt;</span> <span class="k">output</span><span class="p">.</span><span class="k">sql</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="导出单个表-表结构表数据">导出单个表 (表结构&amp;表数据)</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p123</span> <span class="n">test_database</span> <span class="n">test_tbl</span> <span class="o">&gt;</span> <span class="k">output</span><span class="p">.</span><span class="k">sql</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># filter_by</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">UserInfo</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">==</span><span class="s1">&#39;1001&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">UserInfo</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;1001&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;chen&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2021-06-10</span>
+                <span>Updated on 2021-08-07</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/dump/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="/filter_by/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://jiu-chen.github.io/dump/" data-title="mysqldump导出数据"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://jiu-chen.github.io/dump/" data-title="mysqldump导出数据"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://jiu-chen.github.io/filter_by/" data-title="sqlalchemy filter和filter_by区别"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://jiu-chen.github.io/filter_by/" data-title="sqlalchemy filter和filter_by区别"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -214,8 +196,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/copy_file/" class="prev" rel="prev" title="docker容器和宿主机之间相互拷贝文件"><i class="fas fa-angle-left fa-fw"></i>docker容器和宿主机之间相互拷贝文件</a>
-            <a href="/goroutine_join/" class="next" rel="next" title="go main函数等待所有goroutine结束">go main函数等待所有goroutine结束<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/goroutine_join/" class="prev" rel="prev" title="go main函数等待所有goroutine结束"><i class="fas fa-angle-left fa-fw"></i>go main函数等待所有goroutine结束</a></div>
 </div>
 <div id="comments"></div></article></div>
             </main><footer class="footer">
