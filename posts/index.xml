@@ -1,0 +1,87 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - jiuchen&#39;s blog</title>
+        <link>http://jiu-chen.github.io/posts/</link>
+        <description>All Posts | jiuchen&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>test@gmail.com (jiu chen)</managingEditor>
+            <webMaster>test@gmail.com (jiu chen)</webMaster><lastBuildDate>Thu, 10 Jun 2021 17:54:58 &#43;0800</lastBuildDate><atom:link href="http://jiu-chen.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>mysqldump导出数据</title>
+    <link>http://jiu-chen.github.io/dump/</link>
+    <pubDate>Thu, 10 Jun 2021 17:54:58 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://jiu-chen.github.io/dump/</guid>
+    <description><![CDATA[mysqldump
+ -h server address, localhost default -t table -d &ndash;no-data, 不导出数据, 仅导出表结构  只导出表结构，不导出数据 1  mysqldump -uroot -p123 -d test_database &gt; output.sql   只导出表数据，不导出结构 1  mysqldump -uroot -p123 -t test_database &gt; output.sql   导出整个数据库，表结构&amp;数据 1  mysqldump -uroot -p123 test_database &gt; output.sql   导出单个数据表结构（不包含数据） 1  mysqldump -uroot -p123 -d test_database test_tbl &gt; output.]]></description>
+</item><item>
+    <title>docker容器和宿主机之间相互拷贝文件</title>
+    <link>http://jiu-chen.github.io/copy_file/</link>
+    <pubDate>Thu, 10 Jun 2021 17:38:25 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://jiu-chen.github.io/copy_file/</guid>
+    <description><![CDATA[开发过程中常常需要将宿主机的文件拷贝到docker容器中，或将docker容器中的文件拷贝出来到宿主机。
+拷贝到docker容器 1  docker cp file_name container_name:/tmp   比如将文件a.txt拷贝到mysql容器下的tmp目录
+1  docker cp a.txt mysql:/tmp   进入docker容器查看是否拷贝成功
+1 2 3  docker exec -it mysql /bin/bash cd /tmp ls   拷贝到宿主机 只需要反过来写即可
+1  docker cp container_name:/xxx/filename .   比如将mysql容器中/tmp/b.txt拷贝到宿主机当前文件
+1  docker cp mysql:/tmp/b.txt .]]></description>
+</item><item>
+    <title>修改centos7 yum源</title>
+    <link>http://jiu-chen.github.io/change-yum-repo/</link>
+    <pubDate>Sat, 29 May 2021 10:51:46 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://jiu-chen.github.io/change-yum-repo/</guid>
+    <description><![CDATA[system: Centos 7
+装好centos之后，为了方便下载一些软件，常常需要更换yum源
+默认的yum源配置在 /etc/yum.repos.d/CentOS-Base.repo中
+1 2 3 4 5 6  [base] name=CentOS-$releasever - Base mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os&amp;infra=$infra #baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7   更换阿里源
+备份默认的yum源 1  mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup   下载阿里源 1  wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo   阿里源配置:
+1 2 3 4 5 6 7 8  [base] name=CentOS-$releasever - Base - mirrors.]]></description>
+</item><item>
+    <title>ssh连接远程虚拟机</title>
+    <link>http://jiu-chen.github.io/ssh-connection/</link>
+    <pubDate>Thu, 27 May 2021 18:54:31 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://jiu-chen.github.io/ssh-connection/</guid>
+    <description><![CDATA[system: centos7
+通过ssh连接远程虚拟机首先当前client安装了ssh, 使用
+1  ssh -V   命令可以查看ssh版本
+1 2  $ ssh -V OpenSSH_7.9p1, LibreSSL 2.7.3   ping 通过ping命令目标虚拟机可以check网络是否联通
+1 2 3 4 5  $ ping 10.211.55.3 PING 10.211.55.3 (10.211.55.3): 56 data bytes 64 bytes from 10.211.55.3: icmp_seq=0 ttl=64 time=0.217 ms 64 bytes from 10.]]></description>
+</item><item>
+    <title>linux下添加用户并授权</title>
+    <link>http://jiu-chen.github.io/add-user-and-authorize/</link>
+    <pubDate>Mon, 17 May 2021 14:56:55 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://jiu-chen.github.io/add-user-and-authorize/</guid>
+    <description><![CDATA[添加Linux用户并为添加的用户授予root权限
+System: Centos7
+添加用户rock 1  adduser rock   修改用户密码 1  passwd rock   授权 因为个人用户只拥有当前home目录下的所有权限, 无法查看或修改其他用户目录。使用sudo可以获取到root权限。然而，新建的用户无法使用sudo命令，需要先对用户进行授权。
+编辑 /etc/sudoers 文件
+1 2  chmod -v u+w /etc/sudoers vim /etc/sudoers   在
+root ALL=(ALL) ALL
+下面加入一行
+rock ALL=(ALL) ALL
+后 wq 保存文件
+如果你想要使用sudo的时候不需要密码，则加入
+rock ALL=(ALL) NOPASSWD:ALL
+收回sudoers的写权限]]></description>
+</item><item>
+    <title>go http请求中body的封装方法</title>
+    <link>http://jiu-chen.github.io/go-post-request-body/</link>
+    <pubDate>Sat, 08 May 2021 11:41:56 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://jiu-chen.github.io/go-post-request-body/</guid>
+    <description><![CDATA[go语言不像python, 它是静态强类型语言, 在使用变量之前必须声明好类型。
+在使用go net/http 发送 http 请求的时候，常常遇到请求所带的body是一个value类型不唯一的情况。比如有一个这样的request json body:
+1 2 3 4 5 6 7 8 9 10  { &#34;id&#34;: 10, &#34;name&#34;: &#34;jc&#34;, &#34;groups&#34;: [&#34;g1&#34;, &#34;g2&#34;], &#34;info&#34;: { &#34;address&#34;: &#34;xxxx&#34;, &#34;hobby&#34;: [&#34;noodle&#34;,&#34;sandwich&#34;], &#34;age&#34;: 11 } }   在python中，没有类型要求，只需要一步一步写下去即可:
+1 2 3 4 5 6 7 8 9 10 11 12 13  import request # .]]></description>
+</item><item>
+    <title>使用hugo搭建blog</title>
+    <link>http://jiu-chen.github.io/setps-to-build-blog/</link>
+    <pubDate>Fri, 07 May 2021 18:05:04 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://jiu-chen.github.io/setps-to-build-blog/</guid>
+    <description><![CDATA[Hugo是最流行的开源静态站点生成器之一。凭借其惊人的速度和灵活性，Hugo使构建网站变得非常简单。
+安装 hugo 1  brew install hugo   新建一个blog网站 1  hugo new site blog   选择一个 Hugo 主题  访问 hugo 主题: https://themes.gohugo.io/ 选择一个主题， 比如 LoveIt: https://github.com/dillonzq/LoveIt git clone 至blog目录下  1 2  cd blog git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt   编辑配置文件 config.toml refer: https://hugoloveit.com/zh-cn/theme-documentation-basics/#top  新建一篇文章 1  hugo new post/my-first-post.]]></description>
+</item></channel>
+</rss>
