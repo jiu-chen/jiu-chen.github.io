@@ -102,6 +102,11 @@
         alt="https://dn-qiniu-avatar.qbox.me/avatar/"
         title="https://dn-qiniu-avatar.qbox.me/avatar/" /></div><h2 class="home-subtitle">超越外在 挑战时间</h2></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/installation/">mac go grpc环境准备</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-08-08">2021-08-08</time></span></div><div class="content">安装protobuf  源码安装: https://zhuanlan.zhihu.com/p/60471892
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  # 下载 https://github.com/protocolbuffers/protobuf/releases  # 选择 protobuf-all-3.17.3.tar.gz # 解压 # 设置编译目录 $ ./configure --prefix=/usr/local/protobuf # 安装 $ make $ make install # 配置环境变量 .zshrc, 添加: # export PROTOBUF=/usr/local/protobuf  # export PATH=$PROTOBUF/bin:$PATH $ source ~/.</div><div class="post-footer">
+        <a href="/installation/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/filter_by/">sqlalchemy filter和filter_by区别</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-08-07">2021-08-07</time></span></div><div class="content">区别    方法 语法 &gt; &lt;（大于，小于）查询 AND, OR查询     filter 类名.用属性名，比较用= 支持 支持   filter_by 直接用属性名，比较用== 支持 支持    Examples 1 2 3 4  # filter db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;, UserInfo.name=&#39;chen&#39;).first()   1 2 3  # filter_by db.session.query(UserInfo.id).filter_by(id==&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(id=&#39;1001&#39;, name=&#39;chen&#39;).first()   </div><div class="post-footer">
         <a href="/filter_by/">Read More</a></div>
@@ -133,14 +138,6 @@
 备份默认的yum源 1  mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup   下载阿里源 1  wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo   阿里源配置:
 1 2 3 4 5 6 7 8  [base] name=CentOS-$releasever - Base - mirrors.</div><div class="post-footer">
         <a href="/change-yum-repo/">Read More</a></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/ssh-connection/">ssh连接远程虚拟机</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-27">2021-05-27</time></span></div><div class="content">system: centos7
-通过ssh连接远程虚拟机首先当前client安装了ssh, 使用
-1  ssh -V   命令可以查看ssh版本
-1 2  $ ssh -V OpenSSH_7.9p1, LibreSSL 2.7.3   ping 通过ping命令目标虚拟机可以check网络是否联通
-1 2 3 4 5  $ ping 10.211.55.3 PING 10.211.55.3 (10.211.55.3): 56 data bytes 64 bytes from 10.211.55.3: icmp_seq=0 ttl=64 time=0.217 ms 64 bytes from 10.</div><div class="post-footer">
-        <a href="/ssh-connection/">Read More</a></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>

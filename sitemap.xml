@@ -2,8 +2,9 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://jiu-chen.github.io/</loc><lastmod>2021-08-07T10:59:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://jiu-chen.github.io/posts/</loc><lastmod>2021-08-07T10:59:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://jiu-chen.github.io/</loc><lastmod>2021-08-08T10:52:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://jiu-chen.github.io/installation/</loc><lastmod>2021-08-08T10:52:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://jiu-chen.github.io/posts/</loc><lastmod>2021-08-08T10:52:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://jiu-chen.github.io/filter_by/</loc><lastmod>2021-08-07T10:59:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://jiu-chen.github.io/goroutine_join/</loc><lastmod>2021-08-07T10:39:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://jiu-chen.github.io/dump/</loc><lastmod>2021-06-10T17:54:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
