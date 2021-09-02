@@ -19,7 +19,8 @@ func main() {
 	fmt.Println("main exit")
 }
 ```
-结果只会在控制台输出: main exit  
+结果只会在控制台输出: main exit  \
+
 而想要实现类 C 语言中的 join() 函数, 通常有两种办法。
 一种是通过channel进行同步
 ```go
@@ -85,4 +86,4 @@ func main() {
 }
 
 ```
-推荐使用第二种写法，比较灵活
+推荐使用第二种写法，比较灵活;
