@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>sqlalchemy - Tag - jiuchen&#39;s blog</title>
+        <link>http://jiu-chen.github.io/tags/sqlalchemy/</link>
+        <description>sqlalchemy - Tag - jiuchen&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>test@gmail.com (jiu chen)</managingEditor>
+            <webMaster>test@gmail.com (jiu chen)</webMaster><lastBuildDate>Sat, 07 Aug 2021 10:59:00 &#43;0800</lastBuildDate><atom:link href="http://jiu-chen.github.io/tags/sqlalchemy/" rel="self" type="application/rss+xml" /><item>
+    <title>sqlalchemy filter和filter_by区别</title>
+    <link>http://jiu-chen.github.io/filter_by/</link>
+    <pubDate>Sat, 07 Aug 2021 10:59:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://jiu-chen.github.io/filter_by/</guid>
+    <description><![CDATA[区别    方法 语法 &gt; &lt;（大于，小于）查询 AND, OR查询     filter 类名.用属性名，比较用= 支持 支持   filter_by 直接用属性名，比较用== 支持 支持    Examples 1 2 3 4  # filter db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;, UserInfo.name=&#39;chen&#39;).first()   1 2 3  # filter_by db.session.query(UserInfo.id).filter_by(id==&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(id=&#39;1001&#39;, name=&#39;chen&#39;).first()   ]]></description>
+</item></channel>
+</rss>

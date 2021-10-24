@@ -1,0 +1,38 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>linux - Category - jiuchen&#39;s blog</title>
+        <link>http://jiu-chen.github.io/categories/linux/</link>
+        <description>linux - Category - jiuchen&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>test@gmail.com (jiu chen)</managingEditor>
+            <webMaster>test@gmail.com (jiu chen)</webMaster><lastBuildDate>Sat, 29 May 2021 10:51:46 &#43;0800</lastBuildDate><atom:link href="http://jiu-chen.github.io/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>修改centos7 yum源</title>
+    <link>http://jiu-chen.github.io/change-yum-repo/</link>
+    <pubDate>Sat, 29 May 2021 10:51:46 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://jiu-chen.github.io/change-yum-repo/</guid>
+    <description><![CDATA[system: Centos 7
+装好centos之后，为了方便下载一些软件，常常需要更换yum源
+默认的yum源配置在 /etc/yum.repos.d/CentOS-Base.repo中
+1 2 3 4 5 6  [base] name=CentOS-$releasever - Base mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os&amp;infra=$infra #baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7   更换阿里源
+备份默认的yum源 1  mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup   下载阿里源 1  wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo   阿里源配置:
+1 2 3 4 5 6 7 8  [base] name=CentOS-$releasever - Base - mirrors.]]></description>
+</item><item>
+    <title>linux下添加用户并授权</title>
+    <link>http://jiu-chen.github.io/add-user-and-authorize/</link>
+    <pubDate>Mon, 17 May 2021 14:56:55 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://jiu-chen.github.io/add-user-and-authorize/</guid>
+    <description><![CDATA[添加Linux用户并为添加的用户授予root权限
+System: Centos7
+添加用户rock 1  adduser rock   修改用户密码 1  passwd rock   授权 因为个人用户只拥有当前home目录下的所有权限, 无法查看或修改其他用户目录。使用sudo可以获取到root权限。然而，新建的用户无法使用sudo命令，需要先对用户进行授权。
+编辑 /etc/sudoers 文件
+1 2  chmod -v u+w /etc/sudoers vim /etc/sudoers   在
+root ALL=(ALL) ALL
+下面加入一行
+rock ALL=(ALL) ALL
+后 wq 保存文件
+如果你想要使用sudo的时候不需要密码，则加入
+rock ALL=(ALL) NOPASSWD:ALL
+收回sudoers的写权限]]></description>
+</item></channel>
+</rss>

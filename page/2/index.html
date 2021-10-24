@@ -38,7 +38,7 @@
             <a href="/" title="jiuchen&#39;s blog"></a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw"></i>
@@ -81,7 +81,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -93,25 +93,26 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="page home" posts><div class="home-profile"><div class="home-avatar"><img
+                <div class="container"><div class="page home" posts><div class="home-profile"><div class="home-avatar"><a href="/posts/" title="文章"><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="https://dn-qiniu-avatar.qbox.me/avatar/"
         data-srcset="https://dn-qiniu-avatar.qbox.me/avatar/, https://dn-qiniu-avatar.qbox.me/avatar/ 1.5x, https://dn-qiniu-avatar.qbox.me/avatar/ 2x"
         data-sizes="auto"
         alt="https://dn-qiniu-avatar.qbox.me/avatar/"
-        title="https://dn-qiniu-avatar.qbox.me/avatar/" /></div><h2 class="home-subtitle">超越外在 挑战时间</h2></div>
+        title="https://dn-qiniu-avatar.qbox.me/avatar/" /></a></div><h2 class="home-subtitle">超越外在 挑战时间</h2></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/ssh-connection/">ssh连接远程虚拟机</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-27">2021-05-27</time></span></div><div class="content">system: centos7
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-27">2021-05-27</time></span>&nbsp;<span class="post-category">included in <a href="/categories/ssh/"><i class="far fa-folder fa-fw"></i>ssh</a></span></div><div class="content">system: centos7
 通过ssh连接远程虚拟机首先当前client安装了ssh, 使用
 1  ssh -V   命令可以查看ssh版本
 1 2  $ ssh -V OpenSSH_7.9p1, LibreSSL 2.7.3   ping 通过ping命令目标虚拟机可以check网络是否联通
 1 2 3 4 5  $ ping 10.211.55.3 PING 10.211.55.3 (10.211.55.3): 56 data bytes 64 bytes from 10.211.55.3: icmp_seq=0 ttl=64 time=0.217 ms 64 bytes from 10.</div><div class="post-footer">
-        <a href="/ssh-connection/">Read More</a></div>
+        <a href="/ssh-connection/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ssh/">ssh</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/add-user-and-authorize/">linux下添加用户并授权</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-17">2021-05-17</time></span></div><div class="content">添加Linux用户并为添加的用户授予root权限
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-17">2021-05-17</time></span>&nbsp;<span class="post-category">included in <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>linux</a></span></div><div class="content">添加Linux用户并为添加的用户授予root权限
 System: Centos7
 添加用户rock 1  adduser rock   修改用户密码 1  passwd rock   授权 因为个人用户只拥有当前home目录下的所有权限, 无法查看或修改其他用户目录。使用sudo可以获取到root权限。然而，新建的用户无法使用sudo命令，需要先对用户进行授权。
 编辑 /etc/sudoers 文件
@@ -123,19 +124,22 @@ rock ALL=(ALL) ALL
 如果你想要使用sudo的时候不需要密码，则加入
 rock ALL=(ALL) NOPASSWD:ALL
 收回sudoers的写权限</div><div class="post-footer">
-        <a href="/add-user-and-authorize/">Read More</a></div>
+        <a href="/add-user-and-authorize/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">linux</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/go-post-request-body/">go http请求中body的封装方法</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-08">2021-05-08</time></span></div><div class="content">go语言不像python, 它是静态强类型语言, 在使用变量之前必须声明好类型。
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-08">2021-05-08</time></span>&nbsp;<span class="post-category">included in <a href="/categories/go/"><i class="far fa-folder fa-fw"></i>go</a></span></div><div class="content">go语言不像python, 它是静态强类型语言, 在使用变量之前必须声明好类型。
 在使用go net/http 发送 http 请求的时候，常常遇到请求所带的body是一个value类型不唯一的情况。比如有一个这样的request json body:
 1 2 3 4 5 6 7 8 9 10  { &#34;id&#34;: 10, &#34;name&#34;: &#34;jc&#34;, &#34;groups&#34;: [&#34;g1&#34;, &#34;g2&#34;], &#34;info&#34;: { &#34;address&#34;: &#34;xxxx&#34;, &#34;hobby&#34;: [&#34;noodle&#34;,&#34;sandwich&#34;], &#34;age&#34;: 11 } }   在python中，没有类型要求，只需要一步一步写下去即可:
 1 2 3 4 5 6 7 8 9 10 11 12 13  import request # .</div><div class="post-footer">
-        <a href="/go-post-request-body/">Read More</a></div>
+        <a href="/go-post-request-body/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/go/">go</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/setps-to-build-blog/">使用hugo搭建blog</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-07">2021-05-07</time></span></div><div class="content">Hugo是最流行的开源静态站点生成器之一。凭借其惊人的速度和灵活性，Hugo使构建网站变得非常简单。
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-07">2021-05-07</time></span>&nbsp;<span class="post-category">included in <a href="/categories/go/"><i class="far fa-folder fa-fw"></i>go</a></span></div><div class="content">Hugo是最流行的开源静态站点生成器之一。凭借其惊人的速度和灵活性，Hugo使构建网站变得非常简单。
 安装 hugo 1  brew install hugo   新建一个blog网站 1  hugo new site blog   选择一个 Hugo 主题  访问 hugo 主题: https://themes.gohugo.io/ 选择一个主题， 比如 LoveIt: https://github.com/dillonzq/LoveIt git clone 至blog目录下  1 2  cd blog git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt   编辑配置文件 config.toml refer: https://hugoloveit.com/zh-cn/theme-documentation-basics/#top  新建一篇文章 1  hugo new post/my-first-post.</div><div class="post-footer">
-        <a href="/setps-to-build-blog/">Read More</a></div>
+        <a href="/setps-to-build-blog/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/go/">go</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>

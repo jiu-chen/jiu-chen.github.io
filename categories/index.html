@@ -27,7 +27,7 @@
             <a href="/" title="jiuchen&#39;s blog"></a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item active" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw"></i>
@@ -70,7 +70,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -82,7 +82,67 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="page archive"><h2 class="single-title animated pulse faster">All Categories</h2><div class="categories-card"></div></div></div>
+                <div class="container"><div class="page archive"><h2 class="single-title animated pulse faster">All Categories</h2><div class="categories-card"><div class="card-item">
+                        <div class="card-item-wrapper">
+                            <h3 class="card-item-title">
+                                <a href="/categories/go/">
+                                    <i class="far fa-folder fa-fw"></i>&nbsp;go
+                                </a>
+                            </h3><article class="archive-item">
+                                    <a href="/goroutine_join/" class="archive-item-link">go main函数等待所有goroutine结束</a>
+                                </article><article class="archive-item">
+                                    <a href="/go-post-request-body/" class="archive-item-link">go http请求中body的封装方法</a>
+                                </article><article class="archive-item">
+                                    <a href="/setps-to-build-blog/" class="archive-item-link">使用hugo搭建blog</a>
+                                </article></div>
+                    </div><div class="card-item">
+                        <div class="card-item-wrapper">
+                            <h3 class="card-item-title">
+                                <a href="/categories/linux/">
+                                    <i class="far fa-folder fa-fw"></i>&nbsp;linux
+                                </a>
+                            </h3><article class="archive-item">
+                                    <a href="/change-yum-repo/" class="archive-item-link">修改centos7 yum源</a>
+                                </article><article class="archive-item">
+                                    <a href="/add-user-and-authorize/" class="archive-item-link">linux下添加用户并授权</a>
+                                </article></div>
+                    </div><div class="card-item">
+                        <div class="card-item-wrapper">
+                            <h3 class="card-item-title">
+                                <a href="/categories/go-grpc/">
+                                    <i class="far fa-folder fa-fw"></i>&nbsp;go-grpc
+                                </a>
+                            </h3><article class="archive-item">
+                                    <a href="/installation/" class="archive-item-link">mac go grpc环境准备</a>
+                                </article></div>
+                    </div><div class="card-item">
+                        <div class="card-item-wrapper">
+                            <h3 class="card-item-title">
+                                <a href="/categories/mysql/">
+                                    <i class="far fa-folder fa-fw"></i>&nbsp;mysql
+                                </a>
+                            </h3><article class="archive-item">
+                                    <a href="/mysqldump/" class="archive-item-link">mysqldump导出数据</a>
+                                </article></div>
+                    </div><div class="card-item">
+                        <div class="card-item-wrapper">
+                            <h3 class="card-item-title">
+                                <a href="/categories/python/">
+                                    <i class="far fa-folder fa-fw"></i>&nbsp;python
+                                </a>
+                            </h3><article class="archive-item">
+                                    <a href="/filter_by/" class="archive-item-link">sqlalchemy filter和filter_by区别</a>
+                                </article></div>
+                    </div><div class="card-item">
+                        <div class="card-item-wrapper">
+                            <h3 class="card-item-title">
+                                <a href="/categories/ssh/">
+                                    <i class="far fa-folder fa-fw"></i>&nbsp;ssh
+                                </a>
+                            </h3><article class="archive-item">
+                                    <a href="/ssh-connection/" class="archive-item-link">ssh连接远程虚拟机</a>
+                                </article></div>
+                    </div></div></div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">jiu chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>

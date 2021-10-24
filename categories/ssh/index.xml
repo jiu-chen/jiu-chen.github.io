@@ -1,0 +1,19 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>ssh - Category - jiuchen&#39;s blog</title>
+        <link>http://jiu-chen.github.io/categories/ssh/</link>
+        <description>ssh - Category - jiuchen&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>test@gmail.com (jiu chen)</managingEditor>
+            <webMaster>test@gmail.com (jiu chen)</webMaster><lastBuildDate>Thu, 27 May 2021 18:54:31 &#43;0800</lastBuildDate><atom:link href="http://jiu-chen.github.io/categories/ssh/" rel="self" type="application/rss+xml" /><item>
+    <title>ssh连接远程虚拟机</title>
+    <link>http://jiu-chen.github.io/ssh-connection/</link>
+    <pubDate>Thu, 27 May 2021 18:54:31 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://jiu-chen.github.io/ssh-connection/</guid>
+    <description><![CDATA[system: centos7
+通过ssh连接远程虚拟机首先当前client安装了ssh, 使用
+1  ssh -V   命令可以查看ssh版本
+1 2  $ ssh -V OpenSSH_7.9p1, LibreSSL 2.7.3   ping 通过ping命令目标虚拟机可以check网络是否联通
+1 2 3 4 5  $ ping 10.211.55.3 PING 10.211.55.3 (10.211.55.3): 56 data bytes 64 bytes from 10.211.55.3: icmp_seq=0 ttl=64 time=0.217 ms 64 bytes from 10.]]></description>
+</item></channel>
+</rss>

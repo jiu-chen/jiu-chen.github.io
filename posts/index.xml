@@ -29,10 +29,10 @@
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  package main import ( &#34;fmt&#34; &#34;time&#34; ) func main() { for i := 0; i &lt; 10; i++ { go func(i int) { time.Sleep(1 * time.Second) fmt.Println(i) }(i) } fmt.]]></description>
 </item><item>
     <title>mysqldump导出数据</title>
-    <link>http://jiu-chen.github.io/dump/</link>
+    <link>http://jiu-chen.github.io/mysqldump/</link>
     <pubDate>Thu, 10 Jun 2021 17:54:58 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://jiu-chen.github.io/dump/</guid>
+    <guid>http://jiu-chen.github.io/mysqldump/</guid>
     <description><![CDATA[mysqldump
  -h server address, localhost default -t table: 只导出表数据 -d &ndash;no-data, 只导出表结构  只导出表结构，不导出数据 1  mysqldump -uroot -p123 -d test_database &gt; output.sql   只导出表数据，不导出结构 1  mysqldump -uroot -p123 -t test_database &gt; output.sql   导出整个数据库，表结构&amp;数据 1  mysqldump -uroot -p123 test_database &gt; output.sql   导出单张表结构（不包含数据） 1  mysqldump -uroot -p123 -d test_database test_tbl &gt; output.]]></description>
 </item><item>

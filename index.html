@@ -38,7 +38,7 @@
             <a href="/" title="jiuchen&#39;s blog"></a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw"></i>
@@ -81,7 +81,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -93,33 +93,37 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="page home" posts><div class="home-profile"><div class="home-avatar"><img
+                <div class="container"><div class="page home" posts><div class="home-profile"><div class="home-avatar"><a href="/posts/" title="文章"><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="https://dn-qiniu-avatar.qbox.me/avatar/"
         data-srcset="https://dn-qiniu-avatar.qbox.me/avatar/, https://dn-qiniu-avatar.qbox.me/avatar/ 1.5x, https://dn-qiniu-avatar.qbox.me/avatar/ 2x"
         data-sizes="auto"
         alt="https://dn-qiniu-avatar.qbox.me/avatar/"
-        title="https://dn-qiniu-avatar.qbox.me/avatar/" /></div><h2 class="home-subtitle">超越外在 挑战时间</h2></div>
+        title="https://dn-qiniu-avatar.qbox.me/avatar/" /></a></div><h2 class="home-subtitle">超越外在 挑战时间</h2></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/installation/">mac go grpc环境准备</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-08-08">2021-08-08</time></span></div><div class="content">安装protobuf  源码安装: https://zhuanlan.zhihu.com/p/60471892
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-08-08">2021-08-08</time></span>&nbsp;<span class="post-category">included in <a href="/categories/go-grpc/"><i class="far fa-folder fa-fw"></i>go-grpc</a></span></div><div class="content">安装protobuf  源码安装: https://zhuanlan.zhihu.com/p/60471892
 1 2 3 4 5 6 7 8 9 10 11 12 13 14  # 下载 https://github.com/protocolbuffers/protobuf/releases  # 选择 protobuf-all-3.17.3.tar.gz # 解压 # 设置编译目录 $ ./configure --prefix=/usr/local/protobuf # 安装 $ make $ make install # 配置环境变量 .zshrc, 添加: # export PROTOBUF=/usr/local/protobuf  # export PATH=$PROTOBUF/bin:$PATH $ source ~/.</div><div class="post-footer">
-        <a href="/installation/">Read More</a></div>
+        <a href="/installation/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/go-grpc/">go-grpc</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/filter_by/">sqlalchemy filter和filter_by区别</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-08-07">2021-08-07</time></span></div><div class="content">区别    方法 语法 &gt; &lt;（大于，小于）查询 AND, OR查询     filter 类名.用属性名，比较用= 支持 支持   filter_by 直接用属性名，比较用== 支持 支持    Examples 1 2 3 4  # filter db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;, UserInfo.name=&#39;chen&#39;).first()   1 2 3  # filter_by db.session.query(UserInfo.id).filter_by(id==&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(id=&#39;1001&#39;, name=&#39;chen&#39;).first()   </div><div class="post-footer">
-        <a href="/filter_by/">Read More</a></div>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-08-07">2021-08-07</time></span>&nbsp;<span class="post-category">included in <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>python</a></span></div><div class="content">区别    方法 语法 &gt; &lt;（大于，小于）查询 AND, OR查询     filter 类名.用属性名，比较用= 支持 支持   filter_by 直接用属性名，比较用== 支持 支持    Examples 1 2 3 4  # filter db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(UserInfo.id=&#39;1001&#39;, UserInfo.name=&#39;chen&#39;).first()   1 2 3  # filter_by db.session.query(UserInfo.id).filter_by(id==&#39;1001&#39;).first() db.session.query(UserInfo.id).filter(id=&#39;1001&#39;, name=&#39;chen&#39;).first()   </div><div class="post-footer">
+        <a href="/filter_by/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/sqlalchemy/">sqlalchemy</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/goroutine_join/">go main函数等待所有goroutine结束</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-08-07">2021-08-07</time></span></div><div class="content">在go中，main函数不会主动阻塞等待协程函数执行结束，类似默认调用了 C 中的 detach() 函数
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-08-07">2021-08-07</time></span>&nbsp;<span class="post-category">included in <a href="/categories/go/"><i class="far fa-folder fa-fw"></i>go</a></span></div><div class="content">在go中，main函数不会主动阻塞等待协程函数执行结束，类似默认调用了 C 中的 detach() 函数
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  package main import ( &#34;fmt&#34; &#34;time&#34; ) func main() { for i := 0; i &lt; 10; i++ { go func(i int) { time.Sleep(1 * time.Second) fmt.Println(i) }(i) } fmt.</div><div class="post-footer">
-        <a href="/goroutine_join/">Read More</a></div>
+        <a href="/goroutine_join/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/go/">go</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/dump/">mysqldump导出数据</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-06-10">2021-06-10</time></span></div><div class="content">mysqldump
+        <a href="/mysqldump/">mysqldump导出数据</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-06-10">2021-06-10</time></span>&nbsp;<span class="post-category">included in <a href="/categories/mysql/"><i class="far fa-folder fa-fw"></i>mysql</a></span></div><div class="content">mysqldump
  -h server address, localhost default -t table: 只导出表数据 -d &ndash;no-data, 只导出表结构  只导出表结构，不导出数据 1  mysqldump -uroot -p123 -d test_database &gt; output.sql   只导出表数据，不导出结构 1  mysqldump -uroot -p123 -t test_database &gt; output.sql   导出整个数据库，表结构&amp;数据 1  mysqldump -uroot -p123 test_database &gt; output.sql   导出单张表结构（不包含数据） 1  mysqldump -uroot -p123 -d test_database test_tbl &gt; output.</div><div class="post-footer">
-        <a href="/dump/">Read More</a></div>
+        <a href="/mysqldump/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mysql/">mysql</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/copy_file/">docker容器和宿主机之间相互拷贝文件</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-06-10">2021-06-10</time></span></div><div class="content">开发过程中常常需要将宿主机的文件拷贝到docker容器中，或将docker容器中的文件拷贝出来到宿主机。
@@ -131,13 +135,14 @@
         <a href="/copy_file/">Read More</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/change-yum-repo/">修改centos7 yum源</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-29">2021-05-29</time></span></div><div class="content">system: Centos 7
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-05-29">2021-05-29</time></span>&nbsp;<span class="post-category">included in <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>linux</a></span></div><div class="content">system: Centos 7
 装好centos之后，为了方便下载一些软件，常常需要更换yum源
 默认的yum源配置在 /etc/yum.repos.d/CentOS-Base.repo中
 1 2 3 4 5 6  [base] name=CentOS-$releasever - Base mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os&amp;infra=$infra #baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/ gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7   更换阿里源
 备份默认的yum源 1  mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup   下载阿里源 1  wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo   阿里源配置:
 1 2 3 4 5 6 7 8  [base] name=CentOS-$releasever - Base - mirrors.</div><div class="post-footer">
-        <a href="/change-yum-repo/">Read More</a></div>
+        <a href="/change-yum-repo/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/centos/">centos</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>
