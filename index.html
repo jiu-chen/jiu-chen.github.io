@@ -118,7 +118,7 @@
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/dump/">mysqldump导出数据</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jiu chen</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-06-10">2021-06-10</time></span></div><div class="content">mysqldump
- -h server address, localhost default -t table -d &ndash;no-data, 不导出数据, 仅导出表结构  只导出表结构，不导出数据 1  mysqldump -uroot -p123 -d test_database &gt; output.sql   只导出表数据，不导出结构 1  mysqldump -uroot -p123 -t test_database &gt; output.sql   导出整个数据库，表结构&amp;数据 1  mysqldump -uroot -p123 test_database &gt; output.sql   导出单个数据表结构（不包含数据） 1  mysqldump -uroot -p123 -d test_database test_tbl &gt; output.</div><div class="post-footer">
+ -h server address, localhost default -t table: 只导出表数据 -d &ndash;no-data, 只导出表结构  只导出表结构，不导出数据 1  mysqldump -uroot -p123 -d test_database &gt; output.sql   只导出表数据，不导出结构 1  mysqldump -uroot -p123 -t test_database &gt; output.sql   导出整个数据库，表结构&amp;数据 1  mysqldump -uroot -p123 test_database &gt; output.sql   导出单张表结构（不包含数据） 1  mysqldump -uroot -p123 -d test_database test_tbl &gt; output.</div><div class="post-footer">
         <a href="/dump/">Read More</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/copy_file/">docker容器和宿主机之间相互拷贝文件</a>

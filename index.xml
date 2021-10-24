@@ -36,7 +36,7 @@
     <author>Author</author>
     <guid>http://jiu-chen.github.io/dump/</guid>
     <description><![CDATA[mysqldump
- -h server address, localhost default -t table -d &ndash;no-data, 不导出数据, 仅导出表结构  只导出表结构，不导出数据 1  mysqldump -uroot -p123 -d test_database &gt; output.sql   只导出表数据，不导出结构 1  mysqldump -uroot -p123 -t test_database &gt; output.sql   导出整个数据库，表结构&amp;数据 1  mysqldump -uroot -p123 test_database &gt; output.sql   导出单个数据表结构（不包含数据） 1  mysqldump -uroot -p123 -d test_database test_tbl &gt; output.]]></description>
+ -h server address, localhost default -t table: 只导出表数据 -d &ndash;no-data, 只导出表结构  只导出表结构，不导出数据 1  mysqldump -uroot -p123 -d test_database &gt; output.sql   只导出表数据，不导出结构 1  mysqldump -uroot -p123 -t test_database &gt; output.sql   导出整个数据库，表结构&amp;数据 1  mysqldump -uroot -p123 test_database &gt; output.sql   导出单张表结构（不包含数据） 1  mysqldump -uroot -p123 -d test_database test_tbl &gt; output.]]></description>
 </item><item>
     <title>docker容器和宿主机之间相互拷贝文件</title>
     <link>http://jiu-chen.github.io/copy_file/</link>
